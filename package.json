@@ -1,0 +1,25 @@
+{
+  "name": "wasm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lenet2wasm": "emcc src/lenet.cpp -s WASM=1 -o static/lenet.html --preload-file static -s TOTAL_MEMORY=67108864 -s ALLOW_MEMORY_GROWTH=1",
+    "lenet2asm": "emcc src/lenet.cpp -s WASM=0 -o static/lenet_asm.html --preload-file static -s TOTAL_MEMORY=67108864 -s ALLOW_MEMORY_GROWTH=1",
+    "prime2wasm": "emcc src/prime.cpp -s WASM=1 -o static/prime.html",  
+    "prime2asm": "emcc src/prime.cpp -s WASM=0 -o static/prime.html",
+    "echo": "run(){ echo 1x${1}x12; }; run",
+    "compile": "run(){ g++ src/${1}.cpp -o exec/${1}; }; run",
+    "cbuild": "run(){ emcc src/${1}.cpp -s WASM=0 -o static/${1}_asm.html; emcc src/${1}.cpp -s WASM=1 -o static/${1}.html; g++ src/${1}.cpp -o exec/${1}; ./exec/${1}; }; run",
+    "wasm": "run(){ emcc src/${1}.cpp -s WASM=1 -o static/${1}.html; }; run",  
+    "asm": "run(){ emcc src/${1}.cpp -s WASM=0 -o static/${1}_asm.html; }; run",
+    "exec": "run(){ ./exec/${1}; }; run"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-static": "^5.0.0"
+  }
+}
