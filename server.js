@@ -4,7 +4,7 @@ const static = require('koa-static')
 const app = new Koa();
 
 
-const staticPath = './lenet'
+const staticPath = ''
 
 app.use(static(
   path.join( __dirname,  staticPath)

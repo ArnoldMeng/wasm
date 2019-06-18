@@ -3,6 +3,7 @@ import './App.css';
 
 const links = [
   'lenet',
+  'lenet_asm',
   'prime',
   'prime_asm',
   'prime_js_good',

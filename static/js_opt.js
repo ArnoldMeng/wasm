@@ -2017,12 +2017,12 @@ function _main() {
   // }
   // console.log(`time is....${(Date.now() - start_time) / 1000} s\n`);
   // return 0;
-  let count = 20000000;
+  let count = 10000000;
   let b = 2;
   let start_time = 0;
   let a1;
   let a2;
-  for(let j = 0; j < 1; j++)
+  for(let j = 0; j < 5; j++)
   {
     let time1 = 0;
     let time2 = 0;
